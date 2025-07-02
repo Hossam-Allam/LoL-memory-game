@@ -1,7 +1,10 @@
-function Card() {
+function Card({ name, imageUrl }) {
   return (
     <div className="card">
-      <h1>Hi Im a card</h1>
+      {imageUrl && (
+        <img src={imageUrl} alt={`${name} splash art`} className="card-img" />
+      )}
+      {name && <h2 className="card-title">{name}</h2>}
     </div>
   );
 }
