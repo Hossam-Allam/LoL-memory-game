@@ -1,10 +1,10 @@
 function Card({ name, imageUrl }) {
   return (
     <div className="card">
-      {imageUrl && (
-        <img src={imageUrl} alt={`${name} splash art`} className="card-img" />
-      )}
-      {name && <h2 className="card-title">{name}</h2>}
+      <div className="card-img-container">
+        <img src={imageUrl} alt={name} className="card-img" />
+      </div>
+      <div className="card-name">{name}</div>
     </div>
   );
 }
