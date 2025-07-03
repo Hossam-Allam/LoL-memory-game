@@ -1,7 +1,7 @@
 function Header({ streak, attempts }) {
   return (
     <div className="header">
-      <h1 className="title">Memory Game</h1>
+      <h1 className="title">LoL Memory Game</h1>
       <div className="stats">
         <p>Current Streak: {streak}</p>
         <p>Attempts: {attempts}</p>
