@@ -1,12 +1,32 @@
-# React + Vite
+# League of Legends Memory Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fun, interactive twist on the classic memory matching game—featuring your favorite League of Legends champions! Built with React, Vite, and the Riot Games Data Dragon API for up‑to‑date splash arts.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎮 Gameplay
 
-## Expanding the ESLint configuration
+1. **Objective**  
+   Click on champion cards you have yet to click on.
+2. **Streak & Attempts**
+   - **Current Streak**: How many unique champion clicks in a row.
+   - **Attempts**: Your respective round of champion sets
+3. **Replay**  
+   The board reshuffles after every click and champions update after a mistake!
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📦 Features
+
+- **Dynamic Champion Loading**  
+  Fetches the latest champion list and images from the Riot Data Dragon API.
+- **3D Tilt Hover Effect**  
+  Uses `react-parallax-tilt` for a sophisticated mouse‑follow card tilt.
+- **Responsive Grid**  
+  Automatic resizing: 15 cards fill any screen size.
+- **CSS Variables & Theming**  
+  Easy to swap colors, shadows, and spacing from one central place.
+- **Sticky Header**  
+  Your streak and attempts always remain visible at the top.
+
+---
