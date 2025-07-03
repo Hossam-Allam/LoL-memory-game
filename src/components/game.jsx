@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Card from "./card";
+import Header from "./header";
 import { shuffleArray } from "./utils";
 
 export default function Game() {
@@ -67,9 +68,7 @@ export default function Game() {
 
   return (
     <div>
-      <h1>Memory Game</h1>
-      <p>Current Streak: {streak}</p>
-      <p>Attempts: {attempts}</p>
+      <Header streak={streak} attempts={attempts} />
       <div className="card-grid">
         {champions.map((champ) => (
           <Card
