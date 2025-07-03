@@ -52,6 +52,7 @@ export default function Game() {
       setClicked((prev) => [...prev, champ.id]);
       setStreak((prev) => prev + 1);
       console.log(champ.id, champ.name, "clicked", streak + 1);
+      setChampions((prev) => shuffleArray(prev));
     } else {
       setStreak(0);
       setAttempts((prev) => prev + 1);
