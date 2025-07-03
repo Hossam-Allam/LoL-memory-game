@@ -27,7 +27,7 @@ export default function Game() {
 
         // 3. pick 10 unique random champions
         const keys = Object.keys(listJson.data);
-        const randomKeys = shuffleArray(keys).slice(0, 10);
+        const randomKeys = shuffleArray(keys).slice(0, 15);
 
         // 4. build champion objects
         const champs = randomKeys.map((key) => {
