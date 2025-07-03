@@ -68,6 +68,8 @@ export default function Game() {
   return (
     <div>
       <h1>Memory Game</h1>
+      <p>Current Streak: {streak}</p>
+      <p>Attempts: {attempts}</p>
       <div className="card-grid">
         {champions.map((champ) => (
           <Card
