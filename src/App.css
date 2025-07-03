@@ -1,92 +1,144 @@
-/*Card Section*/
-.card {
-  width: 250px;
-  height: 350px;
-  border: 2px solid rgb(255, 119, 0);
-  padding: 5px;
-  border-radius: 5px;
-  background-color: rgb(243, 195, 132);
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  cursor: pointer;
+/*──────────────────────────────────────────────────────────────────────────
+  Variables & Resets
+──────────────────────────────────────────────────────────────────────────*/
+:root {
+  /* Palette */
+  --color-bg: #c0d6f6;
+  --color-header: #ff6b6b;
+  --color-card-bg: #ffffff;
+  --color-card-border: #ffe066;
+  --color-card-name-bg: #022866;
+  --color-text-primary: white;
+  --color-text-secondary: #57606f;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+
+  /* Shadows */
+  --shadow-light: 0 2px 6px rgba(0, 0, 0, 0.08);
+  --shadow-default: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
-.card-img-container {
-  flex: 1;
-
-  border-radius: 5px;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-.card-img {
-  width: 100%;
+html,
+body,
+#root {
   height: 100%;
-  border-radius: 5px;
-  display: block;
-  transition: transform 0.2s ease;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: "Segoe UI", Roboto, sans-serif;
 }
 
-.card-name {
-  padding: 8px;
-  text-align: center;
-  font-weight: bolder;
-  background-color: rgb(242, 208, 150);
-  color: rgb(37, 21, 1);
-}
-
-.card:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-.card:hover .card-img {
-  transform: scale(1.02);
-}
-
-/*Game*/
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 16px;
-  margin-top: 20px;
-  margin-left: 20px;
-}
-
-/* Header */
-
+/*──────────────────────────────────────────────────────────────────────────
+  Header
+──────────────────────────────────────────────────────────────────────────*/
 .header {
-  background-color: rgb(242, 188, 108);
-  margin-top: 0;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 1rem;
-}
-
-.title {
-  margin: 0;
-}
-
-.stats p {
-  margin: 0;
-  text-align: right;
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-header);
+  box-shadow: var(--shadow-default);
 }
 
 .header h1,
 .header p {
   margin: 0;
   padding: 0;
+  color: #fff;
 }
 
-/* THE WEBSITE */
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
 
-body,
-html,
-root {
-  background-color: blanchedalmond;
-  margin: 0;
-  padding: 0;
+.stats p {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/*──────────────────────────────────────────────────────────────────────────
+  Card Grid
+──────────────────────────────────────────────────────────────────────────*/
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+}
+
+/*──────────────────────────────────────────────────────────────────────────
+  Card
+──────────────────────────────────────────────────────────────────────────*/
+.card {
+  background-color: var(--color-card-bg);
+  border: 2px solid var(--color-card-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-light);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card-img-container {
+  flex: 1;
+  overflow: hidden;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-img {
+  transform: scale(1.05);
+}
+
+.card-name {
+  background-color: var(--color-card-name-bg);
+  color: var(--color-text-primary);
+  font-weight: 600;
+  text-align: center;
+  padding: var(--space-sm);
+  font-size: 1.1rem;
+}
+
+/*──────────────────────────────────────────────────────────────────────────
+  Utility Helpers
+──────────────────────────────────────────────────────────────────────────*/
+.text-center {
+  text-align: center;
+}
+
+.mt-md {
+  margin-top: var(--space-md);
 }
