@@ -52,6 +52,13 @@ export default function Game() {
     if (!clicked.includes(champ.id)) {
       setClicked((prev) => [...prev, champ.id]);
       setStreak((prev) => prev + 1);
+
+      if (streak + 1 === champions.length) {
+        alert("Congratulations! You've clicked all champions!");
+        setStreak(0);
+        setAttempts((prev) => prev + 1);
+        setClicked([]);
+      }
       console.log(champ.id, champ.name, "clicked", streak + 1);
       setChampions((prev) => shuffleArray(prev));
     } else {
