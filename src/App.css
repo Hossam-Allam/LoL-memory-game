@@ -1,7 +1,7 @@
 /*Card Section*/
 .card {
   width: 250px;
-  height: 400px;
+  height: 350px;
   border: 2px solid rgb(255, 119, 0);
   padding: 5px;
   border-radius: 5px;
@@ -42,4 +42,13 @@
 
 .card:hover .card-img {
   transform: scale(1.02);
+}
+
+/*Game*/
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
 }
